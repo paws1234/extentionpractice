@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Save for Later",
+    "version": "1.0",
+    "description": "Save articles or web pages to read later, even offline.",
+    "permissions": [
+      "storage",
+      "activeTab",
+      "scripting"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "options_page": "options.html",
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
